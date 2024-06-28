@@ -1,0 +1,21 @@
+{
+    "name": "azure-cosmosdb-sql-api-nodejs-getting-started",
+    "version": "0.0.0",
+    "description": "A short sample app to demonstrate how to get started with Azure Cosmos DB's SQL API",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "@adobe/pdfservices-node-sdk": "^4.0.1",
+        "@azure/cosmos": "^3.9.1",
+        "adm-zip": "^0.5.14",
+        "body-parser": "^1.20.2",
+        "express": "^4.19.2",
+        "multer": "^1.4.5-lts.1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {}
+}
