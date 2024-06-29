@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c5b7742b29c5415a842e668019dd8b5a }}//estfinancas-app
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c5b7742b29c5415a842e668019dd8b5a }}/estfinancas-app
         file: ./Dockerfile
 
   deploy:
