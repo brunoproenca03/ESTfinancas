@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js project to Azure Function App - estensinaapp
+name: Deploy Azure Function App
 
 on:
   push:
@@ -9,47 +9,31 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # caminho para o projeto da função
-  NODE_VERSION: '18.x' # versão do Node.js a ser usada
-
 jobs:
-  build-and-deploy:
+  deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout código
         uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Instalar Dependências
-        run: npm install
-
-      - name: Compilar e Testar
-        run: |
-          npm run build --if-present
-          npm test --if-present
-
-      - name: Zip artefato para implantação
-        run: zip -r function-app.zip .
-
-      - name: Fazer upload do artefato
-        uses: actions/upload-artifact@v2
-        with:
-          name: function-app
-          path: function-app.zip
 
       - name: Login no Azure
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Implantação da Function App
+      - name: Configurar ambiente Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.x'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Compilar e empacotar aplicação
+        run: npm run build --if-present
+
+      - name: Deploy da Function App
         uses: azure/functions-action@v1
         with:
-          app-name: 'nome-da-sua-function-app'
-          package: function-app.zip
-
-          
+          app-name: 'estensinaapp'
+          package: .
