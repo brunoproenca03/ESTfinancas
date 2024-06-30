@@ -65,7 +65,7 @@ initialize();
 
 // Rota para registrar uma fatura
 app.post('/adicionar_faturas', async (req, res) => {
-  const { description, amount } = req.body;
+  const { description, amount, pdfUrl } = req.body;
 
   if (description && amount > 0) {
     try {
@@ -87,7 +87,7 @@ app.post('/adicionar_faturas', async (req, res) => {
       const newId = (lastId + 1).toString();
       const newPartitionKey = "fatura" + (parseInt(lastPartitionKey.replace('fatura', '')) + 1);
 
-      const item = { id: newId, partitionKey: newPartitionKey, description, amount };
+      const item = { id: newId, partitionKey: newPartitionKey, description, amount, pdfUrl };
 
       // Criar nova fatura
       const { resource: createdItem } = await container.items.create(item);
@@ -100,6 +100,7 @@ app.post('/adicionar_faturas', async (req, res) => {
     res.status(400).json({ success: false, message: 'Dados inválidos' });
   }
 });
+
 
 // Rota para obter todas as faturas
 app.get('/faturas', async (req, res) => {
