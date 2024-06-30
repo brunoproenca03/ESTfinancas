@@ -9,13 +9,15 @@
     "dependencies": {
         "@adobe/pdfservices-node-sdk": "^4.0.1",
         "@azure/cosmos": "^3.9.1",
+        "@azure/storage-blob": "^12.23.0",
         "adm-zip": "^0.5.14",
         "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
         "express": "^4.19.2",
         "multer": "^1.4.5-lts.1"
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
-    "devDependencies": {}
+    "license": "ISC"
 }

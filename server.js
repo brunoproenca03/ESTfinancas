@@ -101,7 +101,6 @@ app.post('/adicionar_faturas', async (req, res) => {
   }
 });
 
-
 // Rota para obter todas as faturas
 app.get('/faturas', async (req, res) => {
   try {
@@ -112,7 +111,6 @@ app.get('/faturas', async (req, res) => {
     res.status(500).json({ success: false, message: 'Erro ao obter as faturas' });
   }
 });
-
 
 app.delete('/deleteExpense/:id', async (req, res) => {
   const { id } = req.params;
@@ -134,8 +132,6 @@ app.delete('/deleteExpense/:id', async (req, res) => {
     res.status(500).json({ success: false, message: 'Erro ao excluir a fatura' });
   }
 });
-
-
 
 // Rota para lidar com o upload de arquivo PDF
 app.post('/upload', upload.single('pdfFile'), async (req, res) => {

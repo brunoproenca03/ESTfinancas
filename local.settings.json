@@ -1,8 +1,8 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=estfinancas;AccountKey=F6etOTzr+oViDkf2x8MmjuSIkyYaZz6tSgIFWxRLE+odAQce25SzHCFZmUGjvwD0SbEYz/3F7nxV+AStj5JnaA==;EndpointSuffix=core.windows.net",
     "FUNCTIONS_WORKER_RUNTIME": "node",
-    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing"
+    "BlobStorageConnectionString": "DefaultEndpointsProtocol=https;AccountName=estfinancas;AccountKey=F6etOTzr+oViDkf2x8MmjuSIkyYaZz6tSgIFWxRLE+odAQce25SzHCFZmUGjvwD0SbEYz/3F7nxV+AStj5JnaA==;EndpointSuffix=core.windows.net"
   }
 }
