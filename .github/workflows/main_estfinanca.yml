@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4cfefec7cd53472293e0f8ef665ebe12 }}/estfinancas-app:latest
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4cfefec7cd53472293e0f8ef665ebe12 }}/estfinancas-app
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'estfinanca'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_4ab069ff662d4db19917815ffccaa4d2 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4cfefec7cd53472293e0f8ef665ebe12 }}/estfinancas-app:latest'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4cfefec7cd53472293e0f8ef665ebe12 }}/estfinancas-app'
