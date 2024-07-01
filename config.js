@@ -1,14 +1,14 @@
 var config = {}
 
-config.endpoint = 'https://databaseprojeto.documents.azure.com/'
-config.key = 'pOmdpmDK1fnPZCvpermVndus8cZzMol4akw9IElNd0jDtrdVRdNSyxwz1kwCVWJJnUqBaTD7Q4MZACDbVMjulg=='
+config.endpoint = 'https://estfinancas.documents.azure.com:443/'
+config.key = 'MnFKQdCamgP6wrvvKghx93qsapGoSD0CB2N7YIAgIeoVNnBZtpIyLyFDj13FSfbVXwixU70xkW1KACDbm5xeCQ=='
 
 config.database = {
   id: 'ESTFinancas'
 }
 
 config.container = {
-  id: 'Faturas'
+  id: 'faturas'
 }
 
 module.exports = config
